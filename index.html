@@ -1,10 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<link rel="manifest" href="manifest.json">
-<link rel="icon" href="logo.png" type="image/png">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black">
-<link rel="apple-touch-icon" href="logo.png">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokemon Unite West Bengal</title>
@@ -12,8 +8,6 @@
     <!-- Adding Google Fonts: Cabin and Nunito Sans -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-family/1.0.0/css/cabin.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-family/1.0.0/css/nunito-sans.min.css" rel="stylesheet">
-    <!-- PWA Manifest -->
-    <link rel="manifest" href="manifest.json">
     <style>
         * {
             margin: 0;
@@ -168,7 +162,7 @@
         }
         
         .social-icon.instagram {
-            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            background-color: #EE2A7B;
         }
         
         .social-icon.discord {
@@ -354,86 +348,6 @@
             font-family: 'Cabin', sans-serif;
         }
         
-        /* New Hamburger Menu Styles */
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-        }
-        
-        .hamburger span {
-            background: white;
-            height: 3px;
-            width: 25px;
-            margin: 4px 0;
-            border-radius: 3px;
-        }
-        
-        .mobile-menu {
-            display: none;
-            position: fixed;
-            top: 70px;
-            right: 20px;
-            background-color: #222;
-            border-radius: 15px;
-            width: 200px;
-            padding: 20px;
-            flex-direction: column;
-            gap: 15px;
-            z-index: 1001;
-        }
-        
-        .mobile-menu a {
-            color: white;
-            text-decoration: none;
-            font-size: 16px;
-            font-weight: bold;
-        }
-        
-        /* Logo and Title Style */
-        .logo-title {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .logo-title img {
-            height: 40px;
-            width: auto;
-        }
-        
-        .logo-title span {
-            font-size: 22px;
-            font-weight: bold;
-            color: white;
-        }
-        
-        /* Home Title Update */
-        .home-title {
-            background: url('title.png') no-repeat center center;
-            background-size: contain;
-            color: #ff9900;
-            font-size: 0;
-            width: 100%;
-            height: 120px;
-            margin-bottom: 20px;
-        }
-        
-        /* Scroll to Top Button */
-        #scrollTopBtn {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background-color: #ff9900;
-            color: black;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 18px;
-            z-index: 1000;
-        }
-        
         @media (max-width: 768px) {
             header {
                 padding: 15px;
@@ -445,15 +359,12 @@
             }
             
             nav ul {
-                display: none;
+                flex-wrap: wrap;
+                justify-content: center;
             }
             
-            .hamburger {
-                display: flex;
-            }
-            
-            .mobile-menu.show {
-                display: flex;
+            nav ul li {
+                margin: 5px 10px;
             }
             
             section {
@@ -472,9 +383,8 @@
 </head>
 <body>
     <header>
-        <div class="logo-title">
-            <img src="logo.png" alt="UniteWB Logo">
-            <span>UniteWB</span>
+        <div class="logo-space">
+            <!-- Logo space left empty for client to add later -->
         </div>
         <nav id="main-nav">
             <ul>
@@ -484,101 +394,64 @@
                 <li><a href="#leaderboard">Leaderboard</a></li>
                 <li><a href="#archives">Archives</a></li>
                 <li><a href="#contact">Contact Us</a></li>
-                <li><a href="#" onclick="installApp()">Install App</a></li>
-                <li><a href="#">Login</a></li>
             </ul>
         </nav>
-        <div class="hamburger" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <div class="mobile-menu" id="mobileMenu">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#tournaments">Tournaments</a>
-            <a href="#leaderboard">Leaderboard</a>
-            <a href="#archives">Archives</a>
-            <a href="#contact">Contact Us</a>
-            <a href="#" onclick="installApp()">Install App</a>
-            <a href="#">Login</a>
-        </div>
     </header>
 
     <section id="home">
-        <div class="home-title">Unite WB</div>
-        <p>Don't go solo any longer - come battle, strategize, and connect with other fellow UNITE players in our community. Also we host monthly tournaments and live streams.</p>
-        <p>Join the largest and most active Pokemon Unite community in West Bengal! Participate in tournaments, make friends, and climb the ranks.</p>
+        <h1>(name)</h1>
+        <p>(hometext1)</p>
+        <p>(hometext2)</p>
     </section>
 
     <section id="about">
         <h2>About Us</h2>
         <div class="about-content">
             <h3 class="nunito-text" style="color: white; font-size: 28px; margin-bottom: 20px;">Who are we</h3>
-            <p class="nunito-text">We started as a team Elite Evolvers on 19th April 2023, with a clear vision: to unite all Pokémon Unite players from West Bengal under one banner. What begun as a WhatsApp community, we quickly expanded our reach and impact. By March 2024, we launched our monthly Bengal Cup tournaments and established our Discord server. Recognizing the importance of connection, we organized regular meetups, capturing these moments on our Instagram. To share our competitive spirit and learning opportunities, we launched our YouTube channel for tournament streaming. Our journey has led us to connect and play with national-level players, expanding our reach beyond West Bengal. Notably, our Monsoon Cup, the first-ever Pokémon Unite themed tournament in India, marked a significant milestone, opening our community to all players across the nation. Join us and be a part of our evolving story!</p>
+            <p class="nunito-text">(whowertext)</p>
             
             <div class="social-icons">
                 <a href="#" class="social-icon whatsapp"><i class="fab fa-whatsapp"></i></a>
                 <a href="#" class="social-icon discord"><i class="fab fa-discord"></i></a>
                 <a href="#" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
                 <a href="#" class="social-icon youtube"><i class="fab fa-youtube"></i></a>
-                <a href="https://github.com" class="social-icon" style="background-color: black;"><i class="fab fa-github"></i></a>
             </div>
         </div>
     </section>
 
     <section id="tournaments">
-        <h2>Our Tournaments</h2>
+        <h2>Tournaments</h2>
         <div class="tournament-card">
             <h3>Bengal Scrims</h3>
             <p class="tournament-date">June 1, 2025</p>
-            <p>Monthly Scrims to sharpen your skills for upcoming tournaments. Join us every month's first weekend and level up your gameplay! Open for all players.</p>
+            <p>(bstext)</p>
             <a href="#" class="btn" onclick="openRegistrationForm('simple')">Register</a>
         </div>
         <div class="tournament-card">
             <h3>Bengal Cup Season 2</h3>
             <p class="tournament-date">June 7-8, 2025</p>
-            <p>Experience top-tier competition! Join our monthly tournament on the second weekend of each month offers an exclusive platform and a ₹500 prize pool. Open for all players.</p>
+            <p>(bctext)</p>
             <a href="#" class="btn" onclick="openRegistrationForm('full')">Register</a>
         </div>
         <div class="tournament-card">
             <h3>Bengal Cup Specials</h3>
             <p class="tournament-date">Themed Tournament</p>
-            <p>Our premium flagship tournament, held quarterly on the second weekend, featuring exciting themes, higher entries, and a prize pool up to ₹5000. Open for all players.</p>
+            <p>(bcstext)</p>
             <a href="#" class="btn" onclick="openRegistrationForm('full')">Register</a>
-        </div>
-        
-        <h3 style="color:#ff9900; margin-top: 40px;">Other Tournaments</h3>
-        <div class="tournament-card">
-            <h3>India Clash</h3>
-            <p class="tournament-date">Special Event</p>
-            <p>Exclusive event featuring top talent across India. Clash and prove your mettle!</p>
-            <a href="#" class="btn">View</a>
         </div>
     </section>
 
     <section id="leaderboard">
         <h2>Leaderboard</h2>
-        <p>Check out our top players in the Bengal Cup Season 1, Best of Bengal Challenge</p>
+        <p>(lbtext)</p>
         
         <div class="carousel-container">
             <button class="carousel-button prev"><i class="fas fa-chevron-left"></i></button>
             <div class="carousel-track">
                 <div class="carousel-item">
-                    <img src="1.png" alt="Leaderboard Image 1">
+                    <img src="/api/placeholder/800/500" alt="Leaderboard Test Image">
                 </div>
-                <div class="carousel-item">
-                    <img src="2.png" alt="Leaderboard Image 2">
-                </div>
-                <div class="carousel-item">
-                    <img src="3.png" alt="Leaderboard Image 3">
-                </div>
-                <div class="carousel-item">
-                    <img src="4.png" alt="Leaderboard Image 4">
-                </div>
-                <div class="carousel-item">
-                    <img src="5.png" alt="Leaderboard Image 5">
-                </div>
+                <!-- More images will be added later -->
             </div>
             <button class="carousel-button next"><i class="fas fa-chevron-right"></i></button>
             
@@ -595,21 +468,9 @@
     <section id="archives">
         <h2>Archives</h2>
         <p>Explore our past tournaments, events, and highlights.</p>
-        
-        <div class="tournament-card">
-            <h3>Bengal Cup Season 1</h3>
-            <p class="tournament-date">August 2024</p>
-            <a href="#" class="btn">View</a>
-        </div>
-        <div class="tournament-card">
-            <h3>Monsoon Cup</h3>
-            <p class="tournament-date">July 2024</p>
-            <a href="#" class="btn">View</a>
-        </div>
-        <div class="tournament-card">
-            <h3>Season 1 Leaderboard</h3>
-            <p class="tournament-date">July 2024</p>
-            <a href="#" class="btn">View</a>
+        <div class="archive-links">
+            <a href="#" class="archive-link">Monsoon Cup</a>
+            <!-- More archive links can be added later -->
         </div>
     </section>
 
@@ -624,7 +485,7 @@
                     <p>Pioneer</p>
                 </div>
                 <div class="contact-social">
-                    <a href="#" class="contact-social-icon" style="background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="contact-social-icon" style="background-color: #EE2A7B;"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
             
@@ -645,7 +506,7 @@
                 </div>
                 <div class="contact-social">
                     <a href="#" class="contact-social-icon" style="background-color: #0077b5;"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" class="contact-social-icon" style="background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="contact-social-icon" style="background-color: #EE2A7B;"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
             
@@ -670,71 +531,13 @@
                 </div>
             </div>
         </div>
-        
-        <h3 style="color:#ff9900; margin-top: 30px;">Other Platforms</h3>
-        <div class="contact-cards">
-            <div class="contact-card">
-                <div class="contact-info">
-                    <h3>Swayam Chakraborty</h3>
-                    <p>Pokemon GO WB</p>
-                </div>
-                <div class="contact-social">
-                    <a href="#" class="contact-social-icon" style="background-color: #25D366;"><i class="fab fa-whatsapp"></i></a>
-                </div>
-            </div>
-            <div class="contact-card">
-                <div class="contact-info">
-                    <h3>Parthib Sharma</h3>
-                    <p>TCG Pocket WB</p>
-                </div>
-                <div class="contact-social">
-                    <a href="#" class="contact-social-icon" style="background-color: #25D366;"><i class="fab fa-whatsapp"></i></a>
-                </div>
-            </div>
-        </div>
-        
-        <div style="text-align:center; margin: 40px auto;">
-            <button style="padding: 12px 25px; border-radius: 25px; background-color: #ff9900; color: black; font-weight: bold; margin-right: 10px; border: none;">Become a Sponsor</button>
-            <button style="padding: 8px 16px; border-radius: 8px; background-color: #222; color: white; border: 1px solid #ff9900;">UPI</button>
-        </div>
     </section>
 
     <footer>
         <p>&copy; 2025 Pokemon Unite West Bengal. All rights reserved.</p>
     </footer>
 
-    <!-- Registration Form Modal -->
-    <div id="registrationModal" style="display: none; position: fixed; z-index: 1100; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.8);">
-        <div style="background-color: #222; margin: 10% auto; padding: 30px; border-radius: 10px; width: 80%; max-width: 600px; position: relative;">
-            <span style="position: absolute; right: 20px; top: 10px; color: #aaa; font-size: 28px; font-weight: bold; cursor: pointer;" onclick="closeRegistrationForm()">&times;</span>
-            <h2 style="color: #ff9900; margin-bottom: 20px;" id="modalTitle">Registration Form</h2>
-            
-            <form id="registrationForm">
-                <div style="margin-bottom: 20px;">
-                    <label style="display: block; margin-bottom: 5px; color: #fff;">Team Name:</label>
-                    <input type="text" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #444; background-color: #333; color: #fff;" required>
-                </div>
-                
-                <div style="margin-bottom: 20px;">
-                    <label style="display: block; margin-bottom: 5px; color: #fff;">Team Captain:</label>
-                    <input type="text" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #444; background-color: #333; color: #fff;" required>
-                </div>
-                
-                <div style="margin-bottom: 20px;">
-                    <label style="display: block; margin-bottom: 5px; color: #fff;">Contact Number:</label>
-                    <input type="tel" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #444; background-color: #333; color: #fff;" required>
-                </div>
-                
-                <!-- Player fields will be added dynamically -->
-                <div id="playerFields"></div>
-                
-                <button type="submit" style="background-color: #ff9900; color: #111; padding: 12px 30px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; margin-top: 20px;">Submit Registration</button>
-            </form>
-        </div>
     </div>
-
-    <!-- Scroll to top button -->
-    <button id="scrollTopBtn" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑</button>
 
     <script>
         // Smooth scrolling for navigation links
@@ -752,31 +555,6 @@
             });
         });
         
-        // Mobile menu toggle
-        function toggleMenu() {
-            document.getElementById('mobileMenu').classList.toggle('show');
-        }
-        
-        // PWA Install functionality
-        let deferredPrompt;
-        window.addEventListener('beforeinstallprompt', (e) => {
-            e.preventDefault();
-            deferredPrompt = e;
-        });
-        
-        function installApp() {
-            if (deferredPrompt) {
-                deferredPrompt.prompt();
-            }
-        }
-        
-        // Service Worker Registration
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('sw.js');
-            });
-        }
-        
         // Leaderboard Carousel Functionality
         const track = document.querySelector('.carousel-track');
         const items = document.querySelectorAll('.carousel-item');
@@ -785,7 +563,9 @@
         const indicators = document.querySelectorAll('.indicator');
         
         let currentIndex = 0;
-        const totalItems = 5;
+        const totalItems = 5; // Total number of images that will be added
+        
+        // For now we only have one image but the carousel is set up for 5
         
         function updateCarousel() {
             track.style.transform = `translateX(-${currentIndex * 100}%)`;
@@ -804,3 +584,20 @@
             currentIndex = (currentIndex === 0) ? totalItems - 1 : currentIndex - 1;
             updateCarousel();
         });
+        
+        nextButton.addEventListener('click', () => {
+            currentIndex = (currentIndex === totalItems - 1) ? 0 : currentIndex + 1;
+            updateCarousel();
+        });
+        
+        // Add click event to indicators
+        indicators.forEach(indicator => {
+            indicator.addEventListener('click', () => {
+                currentIndex = parseInt(indicator.getAttribute('data-index'));
+                updateCarousel();
+            });
+        });
+        
+            </script>
+</body>
+</html>
