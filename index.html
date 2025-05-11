@@ -52,13 +52,19 @@
         }
         
         .hamburger-menu {
-            width: 30px;
-            height: 25px;
-            display: flex;
+            display: none;
             flex-direction: column;
             justify-content: space-between;
+            width: 30px;
+            height: 21px;
             cursor: pointer;
-            z-index: 1100;
+            z-index: 1001;
+            background-color: #333;
+            padding: 15px;
+            border-radius: 10px;
+            position: fixed;
+            top: 15px;
+            right: 15px;
         }
         
         .hamburger-menu .line {
@@ -66,6 +72,7 @@
             height: 3px;
             background-color: #fff;
             transition: all 0.3s ease;
+            margin: 3px 0;
         }
         
         nav ul {
@@ -573,7 +580,8 @@
         <h3>Other Tournaments</h3>
         <div class="tournament-card">
             <h3>India Clash</h3>
-            <p class="tournament-date">Dox Store</p>
+            <p class="tournament-date">National Tournament</p>
+            <p>Join the nationwide competition featuring the best Pokemon Unite teams from across India.</p>
             <a href="#" class="btn">View</a>
         </div>
     </section>
@@ -689,9 +697,9 @@
 
     <script>
         // Hamburger menu functionality
-        const hamburgerMenu = document.getElementById('hamburger-menu');
-        const mainNav = document.getElementById('main-nav');
-        const menuOverlay = document.getElementById('menu-overlay');
+        const hamburgerMenu = document.querySelector('.hamburger-menu');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const menuOverlay = document.querySelector('.menu-overlay');
         
         hamburgerMenu.addEventListener('click', (e) => {
             e.stopPropagation();
