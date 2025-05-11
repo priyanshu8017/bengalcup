@@ -474,7 +474,16 @@
             nav#main-nav {
                 display: none;
             }
-            
+
+            @media (min-width: 769px) {
+            .hamburger-menu {
+                display: none !important;
+            }
+
+            nav#main-nav {
+                display: flex !important;
+            }
+                
             section {
                 padding: 100px 20px;
             }
