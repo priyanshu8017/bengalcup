@@ -689,9 +689,9 @@
 
     <script>
         // Hamburger menu functionality
-        const hamburgerMenu = document.querySelector('.hamburger-menu');
-        const mobileMenu = document.querySelector('.mobile-menu');
-        const menuOverlay = document.querySelector('.menu-overlay');
+        const hamburgerMenu = document.getElementById('hamburger-menu');
+        const mainNav = document.getElementById('main-nav');
+        const menuOverlay = document.getElementById('menu-overlay');
         
         hamburgerMenu.addEventListener('click', (e) => {
             e.stopPropagation();
