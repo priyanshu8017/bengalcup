@@ -888,9 +888,6 @@
   function updateCarousel(index) {
     const offset = -index * 100;
     track.style.transform = `translateX(${offset}%)`;
-    indicators.forEach((ind, i) => {
-      ind.classList.toggle('active', i === index);
-    });
   }
 
   prevBtn.addEventListener('click', () => {
