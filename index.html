@@ -929,7 +929,7 @@
   // Load actual leaderboard images
   window.addEventListener("DOMContentLoaded", () => {
     const images = [1, 2, 3, 4, 5].map(n => `/1.png`.replace('1', n));
-    const container = document.querySelector(".carousel-track");
+    const container = document.querySelector(".carousel-inner");
     container.innerHTML = images.map(src => `
       <div class="carousel-item">
         <img src="${src}" alt="Leaderboard Image ${src}">
