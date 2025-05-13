@@ -879,11 +879,10 @@
   });
 
   // Carousel Script
-  const track = document.querySelector('.carousel-track');
+  const track = document.querySelector('.carousel-inner');
   const items = Array.from(document.querySelectorAll('.carousel-item'));
-  const prevBtn = document.querySelector('.carousel-button.prev');
-  const nextBtn = document.querySelector('.carousel-button.next');
-  const indicators = document.querySelectorAll('.indicator');
+  const prevBtn = document.querySelector('.carousel-btn.prev');
+  const nextBtn = document.querySelector('.carousel-btn.next');
   let currentIndex = 0;
 
   function updateCarousel(index) {
