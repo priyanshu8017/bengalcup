@@ -900,14 +900,6 @@
     updateCarousel(currentIndex);
   });
 
-  indicators.forEach(indicator => {
-    indicator.addEventListener('click', () => {
-      const index = parseInt(indicator.getAttribute('data-index'));
-      currentIndex = index;
-      updateCarousel(index);
-    });
-  });
-
   // Touch Swiping for Mobile
   let startX = 0;
   track.addEventListener('touchstart', (e) => {
