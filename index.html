@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="manifest" href="/manifest.json">
-<meta name="theme-color" content="#ff9900">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black">
-<meta name="apple-mobile-web-app-title" content="Pokemon Unite WB">
-<link rel="apple-touch-icon" href="/icons/icon-192x192.png">
+     <link rel="manifest" href="./manifest.json">
+    <meta name="theme-color" content="#ff9900">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="UniteWB">
+    <link rel="apple-touch-icon" href="./logo.png">
+    
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UniteWB</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="description" content="The largest Pokemon Unite community in West Bengal. Join tournaments, connect with players, and climb the ranks.">
+    <title>UniteWB - Pokemon Unite West Bengal</title>
     <style>
         :root {
             --primary: #ff6600;
@@ -1186,5 +1188,21 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     </style>
+    <script>
+        // Check if browser supports service workers
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js')
+                    .then(registration => {
+                        console.log('Service Worker registered with scope:', registration.scope);
+                    })
+                    .catch(error => {
+                        console.error('Service Worker registration failed:', error);
+                    });
+            });
+        } else {
+            console.log('Service workers are not supported in this browser');
+        }
+    </script>
 </body>
 </html>
