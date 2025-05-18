@@ -1036,38 +1036,72 @@ if ('serviceWorker' in navigator) {
   });
 }
 
-// PWA Installation
+// Global variable to store the deferred prompt/ PWA Installation
 let deferredPrompt;
-const installButton = document.getElementById('installApp');
 
-window.addEventListener('beforeinstallprompt', (e) => {
-  // Prevent Chrome 67 and earlier from automatically showing the prompt
-  e.preventDefault();
-  // Stash the event so it can be triggered later
-  deferredPrompt = e;
-  // Update UI to notify the user they can add to home screen
-  installButton.textContent = 'Install App';
+// Wait for the page to load
+window.addEventListener('load', () => {
+  const installButton = document.getElementById('installApp');
+  
+  // Initially hide the install button (we'll show it only when installation is possible)
+  installButton.style.display = 'none';
+  
+  // Check if service worker is supported
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js')
+      .then(registration => {
+        console.log('ServiceWorker registration successful:', registration.scope);
+      })
+      .catch(error => {
+        console.log('ServiceWorker registration failed:', error);
+      });
+  }
+
+  // Listen for the beforeinstallprompt event
+  window.addEventListener('beforeinstallprompt', (e) => {
+    // Prevent the default browser install prompt
+    e.preventDefault();
+    
+    // Save the event for later use
+    deferredPrompt = e;
+    
+    // Show the install button
+    installButton.style.display = 'block';
+    
+    // Log that the event was captured
+    console.log('beforeinstallprompt event captured');
+  });
+
+  // Handle the install button click
   installButton.addEventListener('click', (e) => {
-    // Hide our user interface that shows our A2HS button
-    // Show the prompt
+    // If no installation prompt available, log error and return
+    if (!deferredPrompt) {
+      console.log('No installation prompt available');
+      return;
+    }
+    
+    // Show the installation prompt
     deferredPrompt.prompt();
+    
     // Wait for the user to respond to the prompt
     deferredPrompt.userChoice.then((choiceResult) => {
       if (choiceResult.outcome === 'accepted') {
-        console.log('User accepted the A2HS prompt');
-        installButton.style.display = 'none';
+        console.log('User accepted the installation');
       } else {
-        console.log('User dismissed the A2HS prompt');
+        console.log('User dismissed the installation');
       }
+      
+      // Clear the deferred prompt
       deferredPrompt = null;
     });
   });
-});
 
-// Hide install button if app is already installed
-window.addEventListener('appinstalled', () => {
-  installButton.style.display = 'none';
-  deferredPrompt = null;
+  // Listen for successful installation
+  window.addEventListener('appinstalled', () => {
+    console.log('Application was successfully installed');
+    // Hide the install button after successful installation
+    installButton.style.display = 'none';
+  });
 });
     </script>
     
