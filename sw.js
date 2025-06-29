@@ -1,5 +1,5 @@
 // Updated service worker
-const CACHE_NAME = 'unitewb-v2.5.2';
+const CACHE_NAME = 'unitewb-v2.5.3';
 const urlsToCache = [
   './',
   './index.html',
