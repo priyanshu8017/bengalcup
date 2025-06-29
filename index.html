@@ -1067,7 +1067,10 @@ carousels.forEach(carousel => {
     currentIndex = index;
     carouselInner.style.transform = `translateX(-${currentIndex * 100}%)`;
   }
-
+     
+ // Init carousel position
+  goToSlide(0);
+     
   prevBtn.addEventListener('click', () => goToSlide(currentIndex - 1));
   nextBtn.addEventListener('click', () => goToSlide(currentIndex + 1));
 
