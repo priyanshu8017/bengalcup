@@ -1119,17 +1119,6 @@ carousels.forEach(carousel => {
     autoSlideInterval = setInterval(() => goToSlide(currentIndex + 1), 5000);
   });
 });
-        
-        // Auto-slide functionality
-        let autoSlideInterval = setInterval(() => goToSlide(currentIndex + 1), 5000);
-        
-        carousel.addEventListener('mouseenter', () => {
-            clearInterval(autoSlideInterval);
-        });
-        
-        carousel.addEventListener('mouseleave', () => {
-            autoSlideInterval = setInterval(() => goToSlide(currentIndex + 1), 5000);
-        });
     }
 
     // PWA Installation Logic
