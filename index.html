@@ -1108,19 +1108,6 @@ carousels.forEach(carousel => {
     }
   }
 
-  // Auto-slide functionality
-  let autoSlideInterval = setInterval(() => goToSlide(currentIndex + 1), 5000);
-
-  carousel.addEventListener('mouseenter', () => {
-    clearInterval(autoSlideInterval);
-  });
-
-  carousel.addEventListener('mouseleave', () => {
-    autoSlideInterval = setInterval(() => goToSlide(currentIndex + 1), 5000);
-  });
-});
-    }
-
     // PWA Installation Logic
     const installButton = document.getElementById('installApp');
     let deferredPrompt;
