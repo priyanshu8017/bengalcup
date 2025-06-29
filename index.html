@@ -1055,8 +1055,6 @@ carousels.forEach(carousel => {
   let currentIndex = 0;
   const itemCount = items.length;
 
-  carouselInner.style.width = `${itemCount * 100}%`;
-
   function goToSlide(index) {
     if (index < 0) index = itemCount - 1;
     if (index >= itemCount) index = 0;
