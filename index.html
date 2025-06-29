@@ -777,7 +777,7 @@
     </section>
     
     <!-- Leaderboard Section -->
-    <section id="leaderboard" class="leaderboard">
+    <section id="leaderboard1" class="leaderboard">
         <h2>Leaderboard</h2>
         <p>Check out our top players in the Bengal Cup Season 2.</p>
         
@@ -805,7 +805,7 @@
     </section>
 
      <!-- Leaderboard Section -->
-    <section id="leaderboard" class="leaderboard">
+    <section id="leaderboard2" class="leaderboard">
         <h2>Leaderboard</h2>
         <p>Check out our top players in the Bengal Cup Season 2.</p>
         
@@ -1048,64 +1048,62 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Carousel functionality
-    const carousel = document.querySelector('.carousel');
-    if (carousel) {
-        const carouselInner = document.querySelector('.carousel-inner');
-        const items = document.querySelectorAll('.carousel-item');
-        const prevBtn = document.querySelector('.carousel-btn.prev');
-        const nextBtn = document.querySelector('.carousel-btn.next');
-        
-        let currentIndex = 0;
-        const itemCount = items.length;
-        
-        function goToSlide(index) {
-            if (index < 0) {
-                index = itemCount - 1;
-            } else if (index >= itemCount) {
-                index = 0;
-            }
-            
-            currentIndex = index;
-            carouselInner.style.transform = `translateX(-${currentIndex * 100}%)`;
-        }
-        
-        prevBtn.addEventListener('click', () => goToSlide(currentIndex - 1));
-        nextBtn.addEventListener('click', () => goToSlide(currentIndex + 1));
-        
-        // Touch swipe functionality for carousel
-        let touchStartX = 0;
-        let touchEndX = 0;
-        
-        carousel.addEventListener('touchstart', e => {
-            touchStartX = e.changedTouches[0].screenX;
-        });
-        
-        carousel.addEventListener('touchend', e => {
-            touchEndX = e.changedTouches[0].screenX;
-            handleSwipe();
-        });
-        
-        function handleSwipe() {
-            const difference = touchStartX - touchEndX;
-            if (difference > 50) {
-                // Swipe left, go to next slide
-                goToSlide(currentIndex + 1);
-            } else if (difference < -50) {
-                // Swipe right, go to previous slide
-                goToSlide(currentIndex - 1);
-            }
-        }
-        
-        // Auto-slide functionality
-        let autoSlideInterval = setInterval(() => goToSlide(currentIndex + 1), 5000);
-        
-        carousel.addEventListener('mouseenter', () => {
-            clearInterval(autoSlideInterval);
-        });
-        
-        carousel.addEventListener('mouseleave', () => {
-            autoSlideInterval = setInterval(() => goToSlide(currentIndex + 1), 5000);
-        });
+    const carousels = document.querySelectorAll('.carousel');
+carousels.forEach(carousel => {
+  const carouselInner = carousel.querySelector('.carousel-inner');
+  const items = carousel.querySelectorAll('.carousel-item');
+  const prevBtn = carousel.querySelector('.carousel-btn.prev');
+  const nextBtn = carousel.querySelector('.carousel-btn.next');
+  
+  let currentIndex = 0;
+  const itemCount = items.length;
+
+  function goToSlide(index) {
+    if (index < 0) {
+      index = itemCount - 1;
+    } else if (index >= itemCount) {
+      index = 0;
+    }
+    currentIndex = index;
+    carouselInner.style.transform = `translateX(-${currentIndex * 100}%)`;
+  }
+
+  prevBtn.addEventListener('click', () => goToSlide(currentIndex - 1));
+  nextBtn.addEventListener('click', () => goToSlide(currentIndex + 1));
+
+  // Swipe functionality per carousel
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  carousel.addEventListener('touchstart', e => {
+    touchStartX = e.changedTouches[0].screenX;
+  });
+
+  carousel.addEventListener('touchend', e => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+  });
+
+  function handleSwipe() {
+    const difference = touchStartX - touchEndX;
+    if (difference > 50) {
+      goToSlide(currentIndex + 1);
+    } else if (difference < -50) {
+      goToSlide(currentIndex - 1);
+    }
+  }
+
+  // Auto-slide per carousel
+  let autoSlideInterval = setInterval(() => goToSlide(currentIndex + 1), 5000);
+
+  carousel.addEventListener('mouseenter', () => {
+    clearInterval(autoSlideInterval);
+  });
+
+  carousel.addEventListener('mouseleave', () => {
+    autoSlideInterval = setInterval(() => goToSlide(currentIndex + 1), 5000);
+  });
+});
     }
 
     // PWA Installation Logic
