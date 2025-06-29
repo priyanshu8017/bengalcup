@@ -1063,12 +1063,12 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Carousel functionality
-    const carousel = document.querySelector('.carousel');
-    if (carousel) {
-        const carouselInner = document.querySelector('.carousel-inner');
-        const items = document.querySelectorAll('.carousel-item');
-        const prevBtn = document.querySelector('.carousel-btn.prev');
-        const nextBtn = document.querySelector('.carousel-btn.next');
+    const carousels = document.querySelectorAll('.carousel');
+carousels.forEach(carousel => {
+  const carouselInner = carousel.querySelector('.carousel-inner');
+  const items = carousel.querySelectorAll('.carousel-item');
+  const prevBtn = carousel.querySelector('.carousel-btn.prev');
+  const nextBtn = carousel.querySelector('.carousel-btn.next');
         
         let currentIndex = 0;
         const itemCount = items.length;
